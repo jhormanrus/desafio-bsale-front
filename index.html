@@ -17,8 +17,8 @@
       </a>
       <form class="col-12 col-lg-auto mb-3 mb-lg-0">
         <div class="d-flex">
-          <input type="search" class="form-control me-2" placeholder="Buscar..." aria-label="Buscar">
-          <button class="btn btn-success" type="submit">
+          <input type="search" class="form-control me-2" id="prod-name" placeholder="Buscar..." aria-label="Buscar">
+          <button class="btn btn-success" id="prod-search" type="submit">
             <i class="bi-search"></i>
           </button>
           <button class="btn btn-outline-primary position-relative ms-3" type="button">
@@ -33,7 +33,12 @@
   </header>
   <main class="flex-shrink-0">
     <div class="container">
-      <ul class="nav nav-pills text-capitalize" id="category-container"></ul>
+      <div class="d-flex">
+        <ul class="nav nav-pills text-capitalize pe-3">
+          <li class="nav-item"><a href="#" class="nav-link active" aria-current="page" id="cat-todo">todos</a></li>
+        </ul>
+        <ul class="nav nav-tabs text-capitalize w-100" id="category-container"></ul>
+      </div>
       <div class="row mt-4" id="product-container"></div>
     </div>
   </main>
