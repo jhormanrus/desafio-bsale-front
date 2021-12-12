@@ -1,4 +1,4 @@
-import Product from "./product.js"
+import Products from "./products.js"
 import { ProductService } from "./http-service.js"
 
 export default function Category(selector, categoryData) {
@@ -16,7 +16,8 @@ Category.prototype.onClick = function() {
     this.element.querySelector('.active')?.classList.remove('active')
     element.classList.add('active')
     const productService = new ProductService()
-    const products = new Product('#product-container', await productService.byCategory(this.categoryData.id))
+    const products = new Products('#product-container')
+    products.__proto__.productsData = await productService.byCategory(this.categoryData.id)
     products.generate()
   })
 }
